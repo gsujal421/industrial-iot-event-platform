@@ -62,8 +62,12 @@ industrial-iot-event-platform/
 ├── data/
 │   ├── smart_manufacturing_data/
 │   ├── processed_events/
+|
 ├── docker/
 │   ├── docker-compose.yml/
+|
+├── architecture.png/
+|   
 ├── run_producer.py
 ├── run_consumer.py
 ├── requirements.txt
