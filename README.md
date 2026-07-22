@@ -10,55 +10,12 @@ The primary goal of this project was to learn how streaming systems are designed
 
 ## Architecture
 
-```text
 
-         Industrial IoT Event Streaming Platform
+<p align="center">
+<img src="architecture.png" width="100%">
+</p>
+          
 
-                     CSV Sensor Dataset
-                             │
-                             ▼
-                    Sensor Simulator
-                             │
-                             ▼
-                     Kafka Producer
-                             │
-                             ▼
-              Kafka Topic (iot.sensor.data)
-                             │
-                             ▼
-                     Kafka Consumer
-                             │
-                             ▼
-                     Event Processor
-                             │
-                             ▼
-                        Validator
-                             │
-          ┌──────────────────┼──────────────────┐
-          │                  │                  │
-          ▼                  ▼                  ▼
-     Storage Service    Alert Service      DLQ Service
-          │                  │                  │
-          ▼                  ▼                  ▼
-  Parquet History     iot.sensor.alerts   iot.sensor.dlq
-            │
-            ▼
-  Amazon S3 Bucket
-            │
-            ▼
-  AWS Glue Crawler
-            │
-            ▼
-  AWS Glue Data Catalog
-            │
-            ▼
-      Amazon Athena
-            │
-            ▼
-      SQL Analytics
-
-                     
-```
 ---
 
 
@@ -105,8 +62,12 @@ industrial-iot-event-platform/
 ├── data/
 │   ├── smart_manufacturing_data/
 │   ├── processed_events/
+|
 ├── docker/
 │   ├── docker-compose.yml/
+|
+├── architecture.png/
+|   
 ├── run_producer.py
 ├── run_consumer.py
 ├── requirements.txt
